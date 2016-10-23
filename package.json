@@ -1,0 +1,22 @@
+{
+  "name": "binary-trees-native-c",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:c": "gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1 -lapr-1 -lgomp -lm -fPIC -shared src/binarytrees.c -o src/libbinarytrees.so",
+    "autogypi": "autogypi",
+    "node-gyp": "node-gyp",
+    "install": "npm run build:c && autogypi && node-gyp configure build",
+    "rebuild": "npm run build:c && node-gyp rebuild",
+    "clean": "rm src/libbinarytrees.so && node-gyp clean"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autogypi": "^0.2.2",
+    "nbind": "^0.3.4",
+    "node-gyp": "^3.4.0"
+  }
+}
