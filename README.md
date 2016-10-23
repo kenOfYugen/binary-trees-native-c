@@ -18,3 +18,4 @@ in `binding.gyp` are met, and try again.
 var binaryTreesC = require('binary-trees-native-c');
 
 binaryTreesC.run(10);
+```
